@@ -1,0 +1,18 @@
+pipleline{
+
+    agent any 
+
+    stages{
+
+        stage ('git checkout'){
+
+            stesps{
+
+                git branch: 'main', url: 'https://github.com/julmearun/tarun-counter-app.git'
+
+
+            }
+        }
+        
+    }
+}

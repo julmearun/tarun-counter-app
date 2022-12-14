@@ -9,13 +9,22 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/julmearun/tarun-counter-app.git'
             }
         }
-         stage ('Unit Testing'){
+        stage('Unit Testing'){
 
             steps{
                 sh 'mvn test'
             }
         }
+        stage('Integration testing'){
+
+            steps{
+                sh 'mvn verify -Diskiunittests'
+            }
+        }
+        stage('Maven Building'){
+            steps{
+                sh 'mvn clean install'
+            }
+        }
     }
 }
-    
-
